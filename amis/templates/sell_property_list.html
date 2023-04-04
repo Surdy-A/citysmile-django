@@ -1,0 +1,64 @@
+{% load static %}
+		{% include "header.html" %}
+		<!-- Search Home Section -->
+	
+	<!-- End Search Home Section -->
+		<!-- Properties Page Section -->
+		<section class="properties-page-section">
+			<div class="auto-container">
+				<div class="row clearfix">
+					<!-- Property Block --->
+					{% for property in sell_property_list %}
+					{% if property.status == "For Sale" %}
+					<div class="property-block col-lg-4 col-md-6 col-sm-12">
+						<div class="inner-box">
+							<div class="upper-box clearfix">
+								<div class="pull-left">
+									<div class="price">#{{property.price}}</div>
+								</div>
+								<div class="pull-right">
+									<a class="read-more" href="{{property.get_absolute_url}}">Read More <span
+											class="fas fa-angle-double-right"></span></a>
+								</div>
+							</div>
+							<div class="image">
+								<span class="featured">featured</span>
+								<a href="{{property.get_absolute_url}}"><img src="{{property.image_thumbnail.url}}" alt="" class="resize" /></a>
+								<div class="overlay-box">
+									<li>House For {{property.status}}</li>
+									<li>{{property.availability}}</li>
+								</div>
+							</div>
+							<div class="lower-content">
+								<h3><a href="{{property.get_absolute_url}}">{{property.propertyName}}</a></h3>
+								<ul class="property-info clearfix">
+									<li><i class="flaticon-design-tool"></i>{{property.state}} State</li>
+									<li><i class="flaticon-bed"></i> {{property.bedroom}} Bedrooms</li>
+									<li><i class="flaticon-garage-1"></i> {{property.carSpace}} Garage</li>
+									<li><i class="flaticon-shower"></i> {{property.bathroom}} Bathroom</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					{% endif %}
+					{% endfor %}
+				</div>
+
+				<!-- Styled Pagination 
+				<div class="styled-pagination text-center">
+					<ul class="inner-container clearfix">
+						<li class="prev"><a href="#" class="active"><i class="flaticon-left-arrow"></i> Prev</a></li>
+						<li><a href="#">1</a></li>
+						<li><a href="#">2</a></li>
+						<li class="active"><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">5</a></li>
+						<li class="next"><a href="#" class="active">Next <i class="flaticon-right-arrow-1"></i></a></li>
+					</ul>
+				</div>
+				-->
+			</div>
+		</section>
+		<!-- End Team Section -->
+
+{% include 'footer.html' %}

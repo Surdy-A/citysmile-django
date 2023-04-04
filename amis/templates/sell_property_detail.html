@@ -1,0 +1,94 @@
+{% load static %}
+{% include "header.html" %}
+	<!-- Sidebar Page Container -->
+    <div class="sidebar-page-container">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+				<!--Content Side-->
+                <div class="content-side col-lg-8 col-md-12 col-sm-12">
+					<div class="properties-detail">
+						<div class="inner-box">
+							<h1>{{property_detail.propertyName}} {{property_detail.id}}</h1>
+							<div class="location">{{property_detail.address}}</div>
+							<!-- Property List -->
+							<ul class="property-list">
+								<li>Price :#{{property_detail.price}}</li>
+								<li>City :{{property_detail.get_city_display }}</li>
+								<li>Bedroom :{{property_detail.bedroom}}</li>
+								<li>Bathroom :{{property_detail.bathroom}}</li>
+								<li>Car Space :{{property_detail.carSpace}}</li>
+								<li>State :{{property_detail.get_city_display }}</li>
+								<li>Category :{{property_detail.category}}</li>
+								<li>Property Type :{{property_detail.propertyType}}</li>
+							</ul>
+								<p><a href="https://wa.me/09017219046" class="theme-btn btn-style-one">Contact Agent</a></p>
+							<!-- Property Gallery Box -->
+							<div class="property-gallery-box">
+								
+								<div class="carousel-outer">
+									<ul class="image-carousel owl-carousel owl-theme">
+										<li><a href="{{property_detail.image_thumbnail.url}}" class="lightbox-image" title="Image Caption Here"><img src="{{property_detail.image_thumbnail.url}}" alt="property image"></a></li>
+									</ul>
+									
+									<ul class="thumbs-carousel owl-carousel owl-theme">
+									
+									</ul>
+								</div>
+							
+							</div>
+							
+							<!-- Property Detail Box -->
+							<div class="property-detail-box">
+								<h2>Property Details.</h2>
+								<div class="text">
+									<p>{{property_detail.Description}}</p>
+									<ul class="property-info clearfix">
+										<li><i class="flaticon-design-tool"></i></li>
+										<li><i class="flaticon-bed"></i>{{property_detail.bedroom}} Bedrooms</li>
+										<li><i class="flaticon-garage-1"></i>{{property_detail.carSpace}} Garage</li>
+										<li><i class="flaticon-shower"></i>{{property_detail.bathroom}} Bathroom</li>
+										<li><i class="flaticon-dimension"></i>Price: #{{property_detail.price}}</li>
+										<li><i class="flaticon-gallery"></i> City: {{property_detail.city}}</li>
+									</ul>
+								</div>
+								<!-- Property Featured Box -->
+								
+
+
+								<!-- Video Outer Box -->
+								<div class="video-outer-box">
+									<h3>Video View</h3>
+									<!--Video Box-->
+									<div class="video-box">
+										<div class="image">
+											<a href="{{property_detail.video}}" class="lightbox-image overlay-box"><span class="flaticon-play-button"><i class="ripple"></i></span></a>
+											<img src="assets/images/background/2.jpg" alt="">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Sidebar Side-->
+                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+                	<aside class="sidebar sticky-top">
+						<div class="sidebar-inner">
+						<!-- Social Widget -->
+						<div class="sidebar-widget sidebar-social-widget">
+							<ul class="social-icon-two">
+								<li><a href="https://www.facebook.com/profile.php?id=100081599105741&mibextid=LQQJ4d"><span class="fab fa-facebook-f"></span></a></li>
+								<li class="twitter"><a href="https://www.tiktok.com/@hollisstarr"><span class="fab fa-twitter"></span></a></li>
+							</ul>
+						</div>
+						<!-- End Social Widget -->
+						
+						</div>
+					</aside>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+{% include 'footer.html' %}
